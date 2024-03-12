@@ -3,7 +3,9 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+ - caption: Running ROMS on Expanse
+   chapters:
+   - file: roms_expanse
+    
+   
