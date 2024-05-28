@@ -4,8 +4,35 @@
 format: jb-book
 root: intro
 parts:
- - caption: Running ROMS on Expanse
+ - caption: Mean state of Hvalfjordur
    chapters:
-   - file: roms_expanse
+   - file: Density_overview.ipynb
+   - file: velocity_iceland3.ipynb
+   - file: tidal_analysos.ipynb
+
+ - caption: Wake and sub grid scale dilution model
+   chapters:
+   - file: Wake_dilution_scenarios.ipynb
+
+ - caption: Dye experiments
+   chapters:
+   - file: dyepatch_small.ipynb
+
+ - caption: OAE experiments
+   chapters:
+   - file: pretty_movies_ALK.ipynb
+
+ - caption: Model-Observation comparison framework
+   chapters:
+   - file: observationtomodel_comparison.ipynb
+
+ - caption: High resolution atmospheric forcing
+   chapters:
+   - file: regrid_atmospheric_forcing.ipynb
+
+
+
+
+
     
    
