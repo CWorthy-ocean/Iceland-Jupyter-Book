@@ -9,6 +9,7 @@ parts:
    - file: Density_overview.ipynb
    - file: velocity_iceland3.ipynb
    - file: tidal_analysos.ipynb
+   - file: surface_obs.ipynb
 
  - caption: Wake and sub grid scale dilution model
    chapters:
@@ -17,19 +18,27 @@ parts:
  - caption: Dye experiments
    chapters:
    - file: dyepatch_small.ipynb
+   - file: dye_movie-Copy1.ipynb
 
  - caption: OAE experiments
    chapters:
+   - file: Adding_alk_initial_file.ipynb
    - file: pretty_movies_ALK.ipynb
 
  - caption: Model-Observation comparison framework
    chapters:
-   - file: observationtomodel_comparison.ipynb
+   - file: CTD_comparison.ipynb
 
  - caption: High resolution atmospheric forcing
    chapters:
    - file: regrid_atmospheric_forcing.ipynb
 
+ - caption: Dual-tracer field trial
+   chapters:
+   - file: surface_obs_fieldtrial.ipynb
+   - file: find_tidal_minimum.ipynb
+
+ 
 
 
 
