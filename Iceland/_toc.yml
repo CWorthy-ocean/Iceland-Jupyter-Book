@@ -37,11 +37,5 @@ parts:
    chapters:
    - file: surface_obs_fieldtrial.ipynb
    - file: find_tidal_minimum.ipynb
-
- 
-
-
-
-
     
    
