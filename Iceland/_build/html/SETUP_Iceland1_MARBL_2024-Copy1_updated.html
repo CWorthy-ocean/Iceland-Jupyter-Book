@@ -1,0 +1,1138 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ROMS-TOOLS setup for Iceland1_MARBL_2024 &#8212; Iceland field-trial modeling support</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SETUP_Iceland1_MARBL_2024-Copy1_updated';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ROMS-TOOLS setup for Iceland3_MARBL_2024" href="SETUP_Iceland2_MARBL_2024_updated.html" />
+    <link rel="prev" title="ROMS-TOOLS setup for Iceland0_MARBL_2024" href="SETUP_Iceland0_MARBL_2024-Copy1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Iceland field-trial modeling support - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Iceland field-trial modeling support - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Iceland Field-Trial Modeling
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mean state of Hvalfjordur</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Density_overview.html">Analysis of stratification in the fjord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="velocity_iceland3.html">Velocity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tidal_analysos.html">Tidal flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surface_obs.html">Overview of available surface observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Wake and sub grid scale dilution model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Wake_dilution_scenarios.html">Wake dilution scenarios with varying speed and discharge rate</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dye experiments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dyepatch_small.html">Adding 8 dyes to initial conditions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="dye_movie-Copy1.html">A simple movie showing dye release</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OAE experiments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Adding_alk_initial_file.html">Adding alkalinity to a ROMS initial file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pretty_movies_ALK.html">4 IBC Alkalinity release movie</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-Observation comparison framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CTD_comparison.html">Observation to Model Comparison: CTDs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dual-tracer field trial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="surface_obs_fieldtrial.html">Overview of available surface observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="find_tidal_minimum.html">Assessing tidal fluctuations in ROMS 33 m model</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CWorthy-ocean/Iceland-Jupyter-Book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CWorthy-ocean/Iceland-Jupyter-Book/issues/new?title=Issue%20on%20page%20%2FSETUP_Iceland1_MARBL_2024-Copy1_updated.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SETUP_Iceland1_MARBL_2024-Copy1_updated.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ROMS-TOOLS setup for Iceland1_MARBL_2024</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="roms-tools-setup-for-iceland1-marbl-2024">
+<h1>ROMS-TOOLS setup for Iceland1_MARBL_2024<a class="headerlink" href="#roms-tools-setup-for-iceland1-marbl-2024" title="Link to this heading">#</a></h1>
+<p>First step is to set up the outer grid using ROMS-TOOLS and save the grid file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">roms_tools</span> <span class="kn">import</span> <span class="n">Grid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="o">=</span><span class="s1">&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/&#39;</span>
+<span class="n">datasets</span><span class="o">=</span><span class="s1">&#39;/anvil/projects/x-ees250129/Datasets_subset/&#39;</span>
+<span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;Iceland1&#39;</span>
+<span class="n">child_name</span><span class="o">=</span><span class="s1">&#39;Iceland2&#39;</span>
+<span class="n">grid_path</span><span class="o">=</span><span class="s1">&#39;/anvil/projects/x-ees250129/x-uheede/MATLAB/setup_r2r_phys+bgc/1.Make_grid/Iceland1_grid_MAT1.nc&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%%time</span>
+
+<span class="c1">#grid = Grid(</span>
+<span class="c1">#    nx=512,</span>
+<span class="c1">#    ny=512,</span>
+<span class="c1">#    size_x=384,</span>
+<span class="c1">#    size_y=384,</span>
+<span class="c1">#    center_lon=-24,</span>
+<span class="c1">#    center_lat=64.9,</span>
+<span class="c1">#    rot=0,</span>
+<span class="c1">#    topography_source={</span>
+<span class="c1">#        &quot;name&quot;: &quot;SRTM15&quot;,</span>
+<span class="c1">#        &quot;path&quot;: datasets+&quot;SRTM15/SRTM15_V2.6.nc&quot;},</span>
+<span class="c1">#    N=60  # number of vertical layers</span>
+<span class="c1">#)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%%time</span>
+
+<span class="c1">#grid = Grid(</span>
+<span class="c1">#    nx=512,</span>
+<span class="c1">#    ny=384,</span>
+<span class="c1">#    size_x=384,</span>
+<span class="c1">#    size_y=288,</span>
+<span class="c1">#    center_lon=-22.6,</span>
+<span class="c1">#    center_lat=63.55,</span>
+<span class="c1">#    rot=0,</span>
+<span class="c1">#    topography_source={</span>
+<span class="c1">#        &quot;name&quot;: &quot;SRTM15&quot;,</span>
+<span class="c1">#        &quot;path&quot;: datasets+&quot;SRTM15/SRTM15_V2.6.nc&quot;},</span>
+<span class="c1">#    N=60  # number of vertical layers</span>
+<span class="c1">#)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">grid_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-11-18 18:34:40 - WARNING - Vertical coordinates (Cs_r, Cs_w) not found in grid file.
+2025-11-18 18:34:40 - INFO - === Preparing the vertical coordinate system using N = 100, theta_s = 5.0, theta_b = 2.0, hc = 300.0 ===
+2025-11-18 18:34:40 - INFO - Total time: 0.003 seconds
+2025-11-18 18:34:40 - INFO - ========================================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">update_vertical_coordinate</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">theta_s</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">theta_b</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">hc</span><span class="o">=</span><span class="mf">300.0</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6f4344f5f51fa651030a8df978553702ad04bd84357662ee23a520fb4f23926a.png" src="_images/6f4344f5f51fa651030a8df978553702ad04bd84357662ee23a520fb4f23926a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="n">project</span><span class="o">+</span><span class="n">model_name</span><span class="o">+</span><span class="s1">&#39;_grid.nc&#39;</span>
+<span class="n">yaml_filepath</span><span class="o">=</span><span class="n">project</span><span class="o">+</span><span class="n">model_name</span><span class="o">+</span><span class="s1">&#39;_grid_60.yaml&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yaml_filepath</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_grid_60.yaml&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-29 17:54:08 - INFO - Writing the following NetCDF files:
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_grid.nc
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_grid.nc&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">to_yaml</span><span class="p">(</span><span class="n">yaml_filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpxo_path</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">+</span><span class="s2">&quot;TPXO/TPXO10.v2/&quot;</span>
+<span class="n">tpxo_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="n">tpxo_path</span> <span class="o">+</span> <span class="s2">&quot;grid_tpxo10v2.nc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="n">tpxo_path</span> <span class="o">+</span> <span class="s2">&quot;h_tpxo10.v2.nc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;u&quot;</span><span class="p">:</span> <span class="n">tpxo_path</span> <span class="o">+</span> <span class="s2">&quot;u_tpxo10.v2.nc&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we set up tidal forcing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">roms_tools</span> <span class="kn">import</span> <span class="n">TidalForcing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_reference_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidal_forcing</span> <span class="o">=</span> <span class="n">TidalForcing</span><span class="p">(</span>
+    <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TPXO&quot;</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">tpxo_dict</span><span class="p">},</span>
+    <span class="n">ntides</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>  <span class="c1"># Number of constituents to consider &lt;= 15. Default is 10.</span>
+    <span class="n">model_reference_date</span><span class="o">=</span><span class="n">model_reference_date</span><span class="p">,</span>  <span class="c1"># Model reference date. Default is January 1, 2000.</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-27 13:02:37 - INFO - Applying 2D horizontal fill to the source data before regridding.
+2025-10-27 13:02:37 - INFO - Applying 2D horizontal fill to the source data before regridding.
+2025-10-27 13:02:38 - INFO - Applying 2D horizontal fill to the source data before regridding.
+2025-10-27 13:02:38 - INFO - Applying 2D horizontal fill to the source data before regridding.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="n">project</span><span class="o">+</span><span class="n">model_name</span><span class="o">+</span><span class="s2">&quot;_tides.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> tidal_forcing.save(filepath)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-27 13:02:38 - INFO - Writing the following NetCDF files:
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_tides.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[########################################] | 100% Completed | 6.04 sms
+CPU times: user 2.87 s, sys: 1.11 s, total: 3.98 s
+Wall time: 6.23 s
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_tides.nc&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the surface forcing, we use ERA5 plus the unified BGC dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">roms_tools</span> <span class="kn">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">SurfaceForcing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_time1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">end_time1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surface_forcing_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="n">grid</span><span class="p">,</span>
+    <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="n">start_time</span><span class="p">,</span>
+    <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="n">end_time</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;physics&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model_reference_date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="c1"># this is the default</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surface_forcing_kwargs1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;grid&quot;</span><span class="p">:</span> <span class="n">grid</span><span class="p">,</span>
+    <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="n">start_time1</span><span class="p">,</span>
+    <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="n">end_time1</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;physics&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model_reference_date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="c1"># this is the default</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">surface_forcing</span> <span class="o">=</span> <span class="n">SurfaceForcing</span><span class="p">(</span>
+    <span class="o">**</span><span class="n">surface_forcing_kwargs</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ERA5&quot;</span><span class="p">},</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-27 13:02:45 - INFO - No path specified for ERA5 source; defaulting to ARCO ERA5 dataset on Google Cloud.
+2025-10-27 13:04:30 - INFO - Data will be interpolated onto the grid coarsened by factor 2. Remember to set `interp_frc = 1` in your `bulk_frc.opt` ROMS option file.
+2025-10-27 13:04:30 - INFO - Applying 2D horizontal fill to the source data before regridding.
+2025-10-27 13:04:33 - INFO - Applying 2D horizontal fill to the source data before regridding.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2min 49s, sys: 7.95 s, total: 2min 57s
+Wall time: 3min
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">surface_forcing1</span> <span class="o">=</span> <span class="n">SurfaceForcing</span><span class="p">(</span>
+    <span class="o">**</span><span class="n">surface_forcing_kwargs1</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ERA5&quot;</span><span class="p">},</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-29 17:55:31 - INFO - No path specified for ERA5 source; defaulting to ARCO ERA5 dataset on Google Cloud.
+2025-10-29 17:57:16 - INFO - Data will be interpolated onto the grid coarsened by factor 2. Remember to set `interp_frc = 1` in your `bulk_frc.opt` ROMS option file.
+2025-10-29 17:57:17 - INFO - Applying 2D horizontal fill to the source data before regridding.
+2025-10-29 17:57:20 - INFO - Applying 2D horizontal fill to the source data before regridding.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2min 34s, sys: 12.6 s, total: 2min 46s
+Wall time: 2min 50s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surface_forcing</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;uwnd&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[########################################] | 100% Completed | 101.99 ms
+</pre></div>
+</div>
+<img alt="_images/5ac0d38d3e648a36473928c38dab833c855d7eb2c91a4f87e5142169ea59de9b.png" src="_images/5ac0d38d3e648a36473928c38dab833c855d7eb2c91a4f87e5142169ea59de9b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#cesm_bgc_path = &quot;/global/cfs/projectdirs/m4746/Datasets/CESM_REGRIDDED/CESM-surface_lowres_regridded.nc&quot;</span>
+<span class="n">unified_bgc_path</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">+</span><span class="s2">&quot;UNIFIED/BGCdataset.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">unified_bgc_surface_forcing</span> <span class="o">=</span> <span class="n">SurfaceForcing</span><span class="p">(</span>
+    <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+    <span class="n">start_time</span><span class="o">=</span><span class="n">start_time</span><span class="p">,</span>
+    <span class="n">end_time</span><span class="o">=</span><span class="n">end_time</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UNIFIED&quot;</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">unified_bgc_path</span><span class="p">,</span> <span class="s2">&quot;climatology&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;bgc&quot;</span><span class="p">,</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-27 13:05:48 - INFO - Data will be interpolated onto the grid coarsened by factor 2. Remember to set `interp_frc = 1` in your `bgc.opt` ROMS option file.
+2025-10-27 13:05:48 - INFO - 2D horizontal fill is skipped because source data already contains filled values.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 145 ms, sys: 8.95 ms, total: 154 ms
+Wall time: 299 ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="n">project</span><span class="o">+</span><span class="n">model_name</span><span class="o">+</span><span class="s2">&quot;_surface_forcing2024.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> surface_forcing.save(filepath, group=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-27 13:05:53 - INFO - Writing the following NetCDF files:
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202312.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202401.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202402.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202403.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202404.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202405.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202406.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[########################################] | 100% Completed | 77.22 s
+[########################################] | 100% Completed | 79.04 s
+[########################################] | 100% Completed | 74.84 s
+[########################################] | 100% Completed | 79.05 s
+[########################################] | 100% Completed | 77.91 s
+[########################################] | 100% Completed | 80.71 s
+[########################################] | 100% Completed | 77.10 s
+CPU times: user 15min 33s, sys: 2min 11s, total: 17min 44s
+Wall time: 10min 47s
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202312.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202401.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202402.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202403.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202404.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202405.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202406.nc&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> surface_forcing1.save(filepath, group=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-29 17:58:23 - INFO - Writing the following NetCDF files:
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202406.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202407.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202408.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202409.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202410.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202411.nc
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202412.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[########################################] | 100% Completed | 73.88 s
+[########################################] | 100% Completed | 76.59 s
+[########################################] | 100% Completed | 77.23 s
+[########################################] | 100% Completed | 76.66 s
+[########################################] | 100% Completed | 75.70 s
+[########################################] | 100% Completed | 74.32 s
+[########################################] | 100% Completed | 409.54 ms
+CPU times: user 12min 45s, sys: 2min, total: 14min 45s
+Wall time: 9min 6s
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202406.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202407.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202408.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202409.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202410.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202411.nc&#39;),
+ PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_surface_forcing2024_202412.nc&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="n">project</span><span class="o">+</span><span class="n">model_name</span><span class="o">+</span><span class="s2">&quot;_bgc_surface_forcing.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> unified_bgc_surface_forcing.save(filepath)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-27 13:16:36 - INFO - Writing the following NetCDF files:
+/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_bgc_surface_forcing_clim.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[########################################] | 100% Completed | 206.46 ms
+CPU times: user 161 ms, sys: 15 ms, total: 176 ms
+Wall time: 310 ms
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/anvil/projects/x-ees250129/x-uheede/INPUT_files/Iceland1_MARBL_2024/Iceland1_bgc_surface_forcing_clim.nc&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we generate the initial file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">roms_tools</span> <span class="kn">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">ChildGrid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parent_grid</span> <span class="o">=</span> <span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">child_grid_parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nx&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+    <span class="s2">&quot;ny&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+    <span class="s2">&quot;size_x&quot;</span><span class="p">:</span> <span class="mf">102.4</span><span class="p">,</span>
+    <span class="s2">&quot;size_y&quot;</span><span class="p">:</span> <span class="mf">102.4</span><span class="p">,</span>
+    <span class="s2">&quot;center_lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">22.4</span><span class="p">,</span>
+    <span class="s2">&quot;center_lat&quot;</span><span class="p">:</span> <span class="mf">64.39</span><span class="p">,</span>
+    <span class="s2">&quot;rot&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;topography_source&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SRTM15&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">datasets</span><span class="o">+</span><span class="s2">&quot;SRTM15/SRTM15_V2.6.nc&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;N&quot;</span><span class="p">:</span><span class="mi">40</span>  <span class="c1"># number of vertical layers</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">child_grid</span> <span class="o">=</span> <span class="n">ChildGrid</span><span class="p">(</span>
+    <span class="o">**</span><span class="n">child_grid_parameters</span><span class="p">,</span>
+    <span class="n">parent_grid</span><span class="o">=</span><span class="n">parent_grid</span><span class="p">,</span>
+    <span class="n">boundaries</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;south&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;east&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;north&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;west&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">},</span>  <span class="c1"># this is the default</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="s2">&quot;period&quot;</span><span class="p">:</span> <span class="mf">1800.0</span><span class="p">}</span>  <span class="c1"># this is the default</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">child_grid</span> <span class="o">=</span> <span class="n">ChildGrid</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="o">**</span><span class="n">child_grid_parameters</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">parent_grid</span><span class="o">=</span><span class="n">parent_grid</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">boundaries</span><span class="o">=</span><span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="s2">&quot;south&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="s2">&quot;east&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="s2">&quot;north&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="s2">&quot;west&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="p">},</span>  <span class="c1"># this is the default</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="s2">&quot;period&quot;</span><span class="p">:</span> <span class="mf">1800.0</span><span class="p">}</span>  <span class="c1"># this is the default</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">)</span>
+
+<span class="nn">File &lt;string&gt;:20,</span> in <span class="ni">__init__</span><span class="nt">(self, nx, ny, size_x, size_y, center_lon, center_lat, rot, N, theta_s, theta_b, hc, topography_source, hmin, verbose, parent_grid, boundaries, metadata)</span>
+
+<span class="nn">File ~/.conda/envs/roms_tools/lib/python3.12/site-packages/roms_tools/setup/nesting.py:80,</span> in <span class="ni">ChildGrid.__post_init__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">80</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_map_child_boundaries_onto_parent_grid_indices</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_modify_child_topography_and_mask</span><span class="p">()</span>
+
+<span class="nn">File ~/.conda/envs/roms_tools/lib/python3.12/site-packages/roms_tools/setup/nesting.py:89,</span> in <span class="ni">ChildGrid._map_child_boundaries_onto_parent_grid_indices</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="n">parent_grid_ds</span><span class="p">,</span> <span class="n">child_grid_ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_grid_datasets</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="c1"># Map child boundaries onto parent grid indices</span>
+<span class="ne">---&gt; </span><span class="mi">89</span> <span class="n">ds_nesting</span> <span class="o">=</span> <span class="n">map_child_boundaries_onto_parent_grid_indices</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>     <span class="n">parent_grid_ds</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="n">child_grid_ds</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="bp">self</span><span class="o">.</span><span class="n">boundaries</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;prefix&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;period&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds_nesting</span> <span class="o">=</span> <span class="n">ds_nesting</span>
+
+<span class="nn">File ~/.conda/envs/roms_tools/lib/python3.12/site-packages/roms_tools/setup/nesting.py:369,</span> in <span class="ni">map_child_boundaries_onto_parent_grid_indices</span><span class="nt">(parent_grid_ds, child_grid_ds, boundaries, prefix, period, update_land_indices)</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="n">lat_child</span> <span class="o">=</span> <span class="n">child_grid_ds</span><span class="p">[</span><span class="n">names</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="o">**</span><span class="n">bdry_coords</span><span class="p">[</span><span class="n">direction</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="n">mask_child</span> <span class="o">=</span> <span class="n">child_grid_ds</span><span class="p">[</span><span class="n">names</span><span class="p">[</span><span class="s2">&quot;mask&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="o">**</span><span class="n">bdry_coords</span><span class="p">[</span><span class="n">direction</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">369</span> <span class="n">i_eta</span><span class="p">,</span> <span class="n">i_xi</span> <span class="o">=</span> <span class="n">interpolate_indices</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>     <span class="n">parent_grid_ds</span><span class="p">,</span> <span class="n">lon_child</span><span class="p">,</span> <span class="n">lat_child</span><span class="p">,</span> <span class="n">mask_child</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="k">if</span> <span class="n">update_land_indices</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span>     <span class="n">i_eta</span><span class="p">,</span> <span class="n">i_xi</span> <span class="o">=</span> <span class="n">update_indices_if_on_parent_land</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span>         <span class="n">i_eta</span><span class="p">,</span> <span class="n">i_xi</span><span class="p">,</span> <span class="n">grid_location</span><span class="p">,</span> <span class="n">parent_grid_ds</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span>     <span class="p">)</span>
+
+<span class="nn">File ~/.conda/envs/roms_tools/lib/python3.12/site-packages/roms_tools/setup/nesting.py:472,</span> in <span class="ni">interpolate_indices</span><span class="nt">(parent_grid_ds, lon, lat, mask)</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span> <span class="c1"># Check for NaN values</span>
+<span class="g g-Whitespace">    </span><span class="mi">471</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">472</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span>         <span class="s2">&quot;Some points are outside the grid. Please choose either a bigger parent grid or a smaller child grid.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span> <span class="c1"># Check whether indices are close to border of parent grid</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span> <span class="n">nxp</span><span class="p">,</span> <span class="n">nyp</span> <span class="o">=</span> <span class="n">lon_parent</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="ne">ValueError</span>: Some points are outside the grid. Please choose either a bigger parent grid or a smaller child grid.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">child_grid</span><span class="o">.</span><span class="n">plot_nesting</span><span class="p">(</span><span class="n">with_dim_names</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="n">project</span><span class="o">+</span><span class="n">child_name</span><span class="o">+</span><span class="s2">&quot;_grid.nc&quot;</span>
+<span class="n">child_grid</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath_nesting</span> <span class="o">=</span> <span class="n">project</span><span class="o">+</span><span class="n">child_name</span><span class="o">+</span><span class="s2">&quot;_edata.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">child_grid</span><span class="o">.</span><span class="n">save_nesting</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">filepath_nesting</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "roms-tools"
+        },
+        kernelOptions: {
+            name: "roms-tools",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'roms-tools'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SETUP_Iceland0_MARBL_2024-Copy1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ROMS-TOOLS setup for Iceland0_MARBL_2024</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="SETUP_Iceland2_MARBL_2024_updated.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ROMS-TOOLS setup for Iceland3_MARBL_2024</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ulla Heede CWorthy, LLC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

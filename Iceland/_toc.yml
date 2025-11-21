@@ -4,6 +4,14 @@
 format: jb-book
 root: intro
 parts:
+
+ - caption: Input file generation
+   chapters:
+   - file: SETUP_Iceland0_MARBL_2024-Copy1.ipynb
+   - file: SETUP_Iceland1_MARBL_2024-Copy1_updated.ipynb
+   - file: SETUP_Iceland2_MARBL_2024_updated.ipynb
+   - file: SETUP_Iceland3_MARBL_2024.ipynb
+
  - caption: Mean state of Hvalfjordur
    chapters:
    - file: Density_overview.ipynb
